@@ -42,7 +42,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jtT-Ez-rLv"/>
+                    <navigationItem key="navigationItem" id="jtT-Ez-rLv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sEj-H6-0AD">
+                            <connections>
+                                <segue destination="wH1-jq-7tj" kind="presentation" id="Wa3-Bn-6kj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fyF-HL-RRk" id="3oa-fY-XZb"/>
                     </connections>
@@ -50,6 +56,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="132.68365817091455"/>
+        </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="9cC-19-HbC">
+            <objects>
+                <viewController id="wH1-jq-7tj" customClass="AddTaskViewController" customModule="ToDoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y8w-xY-Cnh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHW-px-6Ka">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="New Task " id="YIH-QB-zFQ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KHB-D2-Fkv">
+                                            <connections>
+                                                <segue destination="90Y-Dx-jkI" kind="unwind" identifier="cancel" unwindAction="unwindCancelNewToDoWithUnwindSeque:" id="vXH-Ci-VXs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lMF-sb-SJ5">
+                                            <connections>
+                                                <segue destination="90Y-Dx-jkI" kind="unwind" identifier="save" unwindAction="unwindSaveNewToDoWithUnwindSeque:" id="9MT-Kb-3Nw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-hg-wBt">
+                                <rect key="frame" x="16" y="182" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HHW-px-6Ka" firstAttribute="top" secondItem="2He-FP-FJj" secondAttribute="top" id="1dE-zK-Col"/>
+                            <constraint firstItem="HHW-px-6Ka" firstAttribute="trailing" secondItem="2He-FP-FJj" secondAttribute="trailing" id="DXD-MZ-1bN"/>
+                            <constraint firstItem="HHW-px-6Ka" firstAttribute="leading" secondItem="2He-FP-FJj" secondAttribute="leading" id="uUc-aD-oiZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2He-FP-FJj"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="dCp-hg-wBt" id="B6b-U9-pB6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UC4-ll-Xkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="90Y-Dx-jkI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="941.60000000000002" y="135.38230884557723"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oQR-v9-2Yn">
